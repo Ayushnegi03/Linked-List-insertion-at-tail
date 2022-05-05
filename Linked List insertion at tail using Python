@@ -1,0 +1,49 @@
+#Linked List insertion at tail
+class Node:
+    def __init__(self, DATA):
+        self.DATA = DATA  
+        self.NEXT = None  
+class LinkedList:
+    def __init__(self):
+        self.HEAD = None
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.NEXT = self.HEAD
+        self.HEAD = new_node
+    def insertAfter(self, prev_node, new_data):
+        if prev_node is None:
+            print("The given previous node must inLinkedList.")
+            return
+        new_node = Node(new_data)
+        new_node.NEXT = prev_node.NEXT
+        prev_node.NEXT = new_node
+    def append(self, new_data):
+        new_node = Node(new_data)
+        if self.HEAD is None:
+            self.HEAD = new_node
+            return
+        LAST = self.HEAD
+        while (LAST.NEXT):
+            LAST = LAST.NEXT
+        LAST.NEXT =  new_node
+    def printList(self):
+        temp = self.HEAD
+        while (temp):
+            print(temp.DATA,end=" ")
+            temp = temp.NEXT
+if __name__=='__main__':
+    LList = LinkedList()
+    LList.append(6)
+    LList.push(7)
+    LList.push(1)
+    LList.append(4)
+    LList.append(10)
+    LList.append(14)
+    LList.append(24)
+    LList.insertAfter(LList.HEAD.NEXT, 8)
+    print('Created linked list with insertion at tail: ')
+    LList.printList()
+
+#Output-
+#Created linked list with insertion at tail: 
+#1 7 8 6 4 10 14 24
