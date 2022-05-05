@@ -1,0 +1,72 @@
+var HEAD;  
+class Node 
+{
+    constructor(val) 
+    {
+        this.DATA = val;
+        this.NEXT = null;
+    }
+} 
+function Push(new_data) 
+{
+        var new_node = new Node(new_data);
+        new_node.NEXT = HEAD;
+    HEAD = new_node;
+} 
+function InsertAfter(prev_node, new_data) 
+{
+    if (prev_node == null) 
+    {
+        console.log("The given previous node cannot be null");
+        return;
+    }
+    var new_node = new Node(new_data); 
+    new_node.NEXT = prev_node.NEXT;
+    prev_node.NEXT = new_node;
+}
+function Append(new_data) 
+{
+    var new_node = new Node(new_data);
+    if (HEAD == null) 
+    {
+        HEAD = new Node(new_data);
+        return;
+    }
+        new_node.NEXT = null;
+    var LAST = HEAD;
+    while (LAST.NEXT != null)
+        LAST = LAST.NEXT; 
+    LAST.NEXT = new_node;
+    return;
+}
+function printList() 
+{
+    var tnode = HEAD;
+    while (tnode != null) 
+    {
+        console.log(tnode.DATA + " ");
+        tnode = tnode.NEXT;
+     }
+}
+Append(6);
+Push(7);
+Push(1);
+Append(4);
+Append(12);
+Append(13);
+Append(14);
+InsertAfter(HEAD.NEXT, 8);  
+console.log("Here is a lineked list insertion from tail:")
+console.log( "Created Linked list is: ");
+printList();
+//Output-
+//Here is a lineked list insertion from tail:
+//Created Linked list is: 
+//1
+//7
+//8
+//6
+//4
+//12
+//13
+//14
