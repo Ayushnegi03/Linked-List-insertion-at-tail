@@ -59,7 +59,7 @@ InsertAfter(HEAD.NEXT, 8);
 console.log("Here is a lineked list insertion from tail:")
 console.log( "Created Linked list is: ");
 printList();
-//Output-
+//Output->
 //Here is a lineked list insertion from tail:
 //Created Linked list is: 
 //1
