@@ -44,6 +44,6 @@ if __name__=='__main__':
     print('Created linked list with insertion at tail: ')
     LList.printList()
 
-#Output-
+#Output->
 #Created linked list with insertion at tail: 
 #1 7 8 6 4 10 14 24
