@@ -73,6 +73,6 @@ int main()
      
     return 0;
 }
-//Output-
-//Here is a Linked List insert in a tail
+//Output->
+//Here is a Linked List insert in a tail,
 //Created Linked list is:  3 1 8 7 6 4 10 14 13
